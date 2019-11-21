@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', 'Meiryo','ＭＳ ゴシック',sans-serif;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+input[type="text"], input[type="submit"], input[type="date"], textarea, select {
+    padding: 5px;
+    font-size: 12pt;
+}
+
+.item {
+    width: 500px;
+}
+
+table.list {
+    margin: 40px auto 20px 0;
+}
+
+table.list th {
+    padding: 10px;
+}
+
+table.list td {
+    padding: 5px 10px;
+}
+
+.del {
+    text-decoration: double line-through;
+}
+
+.center {
+    text-align: center;
+}
