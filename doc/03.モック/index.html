@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>TODOリスト</title>
-<link rel="stylesheet" href="./css/normalize.css">
-<link rel="stylesheet" href="./css/main.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>TODOリスト</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
-<div class="container">
-<h1>TODOリスト</h1>
-<form action="add.php" method="post">
-    <input type="date" name="expiration_date" value="2019-06-20">
-    <input type="text" name="todo_item" value="" class="item">
-    <input type="submit" value="追加">
-</form>
-
-<form action="action.php" method="POST">
-<table class="list">
-    <tr>
-        <th>期限日</th>
-        <th>項目</th>
-        <th>未完了</th>
-        <th>完了</th>
-        <th>削除</th>
-    </tr>
-    <tr>
-        <td class="del">2019-06-20</td>
-        <td class="del">朝ごはんの準備</td>
-        <td class="center"><input type="radio" name="is_completed[1]"></td>
-        <td class="center"><input type="radio" name="is_completed[1]" checked></td>
-        <td class="center"><input type="checkbox" name="id_deleted[1]"></td>
-    </tr>
-    <tr>
-        <td class="del">2019-06-20</td>
-        <td class="del">朝ごはんの準備</td>
-        <td class="center"><input type="radio" name="is_completed[2]"></td>
-        <td class="center"><input type="radio" name="is_completed[2]" checked></td>
-        <td class="center"><input type="checkbox" name="id_deleted[2]"></td>
-    </tr>
-    <tr>
-        <td>2019-06-20</td>
-        <td>朝ごはんの準備</td>
-        <td class="center"><input type="radio" name="is_completed[3]" checked></td>
-        <td class="center"><input type="radio" name="is_completed[3]"></td>
-        <td class="center"><input type="checkbox" name="id_deleted[3]"></td>
-    </tr>
-    <tr>
-        <td>2019-06-20</td>
-        <td>朝ごはんの準備</td>
-        <td class="center"><input type="radio" name="is_completed[4]" checked></td>
-        <td class="center"><input type="radio" name="is_completed[4]"></td>
-        <td class="center"><input type="checkbox" name="id_deleted[4]"></td>
-    </tr>
-    <tr>
-        <td>2019-06-20</td>
-        <td>朝ごはんの準備</td>
-        <td class="center"><input type="radio" name="is_completed[5]" checked></td>
-        <td class="center"><input type="radio" name="is_completed[5]"></td>
-        <td class="center"><input type="checkbox" name="id_deleted[5]"></td>
-    </tr>
-    <tr>
-        <td>2019-06-20</td>
-        <td>朝ごはんの準備</td>
-        <td class="center"><input type="radio" name="is_completed[6]" checked></td>
-        <td class="center"><input type="radio" name="is_completed[6]"></td>
-        <td class="center"><input type="checkbox" name="id_deleted[6]"></td>
-    </tr>
-</table>
-<input type="submit"  value="実行">
-</form>
-
-</div>
+    <div class="container">
+        <h1>TODOリスト</h1>
+        <form action="add.php" method="post">
+            <input type="date" name="expiration_date" value="2020-01-07">
+            <input type="text" name="todo_item" value="" class="item">
+            <input type="submit" value="追加">
+        </form>
+        <table class="list">
+            <tr>
+                <th>期限日</th>
+                <th>項目</th>
+                <th>未完了</th>
+                <th>完了</th>
+                <th>削除</th>
+                <th></th>
+            </tr>
+            <tr>
+                <form action="action.php" method="POST">
+                    <input type="hidden" name="id" value="4">
+                    <td class="del">2020-01-01</td>
+                    <td class="del">元旦なので初詣に行く</td>
+                    <td class="center"><input type="radio" name="is_completed" value="0"></td>
+                    <td class="center"><input type="radio" name="is_completed" value="1" checked></td>
+                    <td class="center"><input type="checkbox" name="is_deleted"></td>
+                    <td><input type="submit" value="実行"></td>
+                </form>
+            </tr>
+            <tr>
+                <form action="action.php" method="POST">
+                    <input type="hidden" name="id" value="1">
+                    <td>2020-01-07</td>
+                    <td>ワークで難波神社へ初詣に行く</td>
+                    <td class="center"><input type="radio" name="is_completed" value="0" checked></td>
+                    <td class="center"><input type="radio" name="is_completed" value="1"></td>
+                    <td class="center"><input type="checkbox" name="is_deleted"></td>
+                    <td><input type="submit" value="実行"></td>
+                </form>
+            </tr>
+            <tr>
+                <form action="action.php" method="POST">
+                    <input type="hidden" name="id" value="2">
+                    <td>2020-01-08</td>
+                    <td>ITワーク</td>
+                    <td class="center"><input type="radio" name="is_completed" value="0" checked></td>
+                    <td class="center"><input type="radio" name="is_completed" value="1"></td>
+                    <td class="center"><input type="checkbox" name="is_deleted"></td>
+                    <td><input type="submit" value="実行"></td>
+                </form>
+            </tr>
+            <tr>
+                <form action="action.php" method="POST">
+                    <input type="hidden" name="id" value="3">
+                    <td>2020-01-13</td>
+                    <td>成人の日</td>
+                    <td class="center"><input type="radio" name="is_completed" value="0" checked></td>
+                    <td class="center"><input type="radio" name="is_completed" value="1"></td>
+                    <td class="center"><input type="checkbox" name="is_deleted"></td>
+                    <td><input type="submit" value="実行"></td>
+                </form>
+            </tr>
+        </table>
+    </div>
 </body>
+
 </html>
