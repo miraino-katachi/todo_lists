@@ -1,15 +1,19 @@
 <?php
 // コーディングのヒント
 // できるだけPHPのコードとHTMLのコードは分けて書く。
-// 自分でも、他の人が見ても、わかりやすいように、適切にコメントを書く。
+// 自分が見ても、他の人が見ても、わかりやすいように、適切にコメントを書く。
 
 try {
-    // データベースに接続
+    // データベースに接続するための文字列（DSN・接続文字列）
     $dsn = 'mysql:dbname=todo_list;host=localhost;charset=utf8';
-    // データベースに接続するためのユーザー名・パスワードは、自分の開発環境のMySQLの設定を確認して編集する
-    // XAMPPの場合は、デフォルトでパスワードなし
-    // MAMPの場合は、デフォルトでパスワードは「root」
+
+    // PDOクラスのインスタンスを作る
+    // 引数は、上記のDSN、データベースのユーザー名、パスワード
+    // XAMPPの場合はデフォルトでパスワードなし、MAMPの場合は「root」
     $dbh = new PDO($dsn, 'root', 'root');
+
+    // エラーが起きたときのモードを指定する
+    // 「PDO::ERRMODE_EXCEPTION」を指定すると、エラー発生時に例外がスローされる
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // 削除済みを除く登録済みのTODOリストを全件取得
@@ -25,7 +29,10 @@ try {
     $sql .= 'is_deleted=0 ';
     $sql .= 'order by expiration_date, id';
 
+    // SQL文を実行する準備
     $stmt = $dbh->prepare($sql);
+
+    // SQL文を実行
     $stmt->execute();
 
     // 取得したレコードを連想配列として変数に代入する
